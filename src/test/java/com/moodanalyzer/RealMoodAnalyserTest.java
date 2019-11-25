@@ -3,6 +3,7 @@ package com.moodanalyzer;
 
 import com.MoodAnalysisException;
 import com.MoodAnalyzerFactory;
+import com.ObjectReflector;
 import com.moodanalyzer.RealMoodAnalyser;
 import org.junit.Assert;
 import org.junit.Test;
@@ -61,6 +62,16 @@ public class RealMoodAnalyserTest {
         RealMoodAnalyser realMoodAnalyser= MoodAnalyzerFactory.createMoodAnalyzser("I am in happy mood");
         
         Assert.assertEquals(new RealMoodAnalyser("I am in happy mood"),realMoodAnalyser);
+
+    }
+
+    @Test
+    public void givenMethod_ForDebuging() {
+
+        RealMoodAnalyser realMoodAnalyser=new RealMoodAnalyser("I am in debug mode");
+
+        ObjectReflector.dump(realMoodAnalyser,0);
+
 
     }
 }
